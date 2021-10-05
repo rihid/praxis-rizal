@@ -1,4 +1,4 @@
-# Eksplorasi mengenai type data pada Python
+# Type data pada Python
 
 # String
 a = 'Hallo'
@@ -30,7 +30,7 @@ print(type(dataShinobi))
 
 # Dict
 
-dataDiri = {'Nama' : 'Rizal', 'Alamat' : 'Ponorogo', 'Gender' : 'Laki-Laki'}
+dataDiri = {'Nama' : 'Rizal', 'Alamat' : 'Ponorogo', 'Gender' : 'Laki-Laki', 'Hobby' : 'Membaca'}
 print(dataDiri)
 print(type(dataDiri))
 # Tampilkan satu index
