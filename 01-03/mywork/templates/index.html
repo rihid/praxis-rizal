@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hallo, Django</h1>
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <label for="fname">Data</label>
+            <input type="text" id="fname" name="fname">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    <div class="hasil">
+        <table class="tabel">
+            <tr>
+                <th>Nama</th>
+                <th>Action</th>
+            </tr>
+            {% for i in isi %}
+            <tr>
+                <td>{{i.nama}}</td>
+                <td>Kosong</td>
+            </tr>
+            {% endfor%}
+        </table>
+    </div>
 </body>
 </html>
