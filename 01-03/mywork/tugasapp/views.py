@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
@@ -16,9 +16,32 @@ def index(request):
     hasil = models.tugas.objects.all()
     
     return render(request, 'index.html', {'isi': hasil})
-    # return render(request, 'index.html')
 
-def about(request):
-    return HttpResponse("Halaman About")
+# Detail
+def detail(request, id):
+    data = models.tugas.objects.filter(pk = id).first()
+    print(data)
+    return render(request, 'detail.html', {
+        'dataDetail' : data
+    })
 
+# Hapus
+def hapus(request, id):
+    models.tugas.objects.filter(pk = id).delete()
+    return redirect('/')
+
+# Edit
+def update(request, id):
+    if request.POST:
+        input = request.POST['fname']
+        print(input)
+        models.tugas.objects.filter(pk = id).update(nama = input)
+        return redirect('/')
+        
+    # Nampilin data
+    hasil = models.tugas.objects.filter(pk = id).first()
+    print(hasil)
+    return render(request, 'edit.html', {
+        'detailEdit' : hasil,
+    })
     
