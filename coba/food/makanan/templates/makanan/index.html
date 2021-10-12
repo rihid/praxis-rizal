@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <form action="" class="mt-3" method="post">
+        {% csrf_token %}
+        <div class="ms-3 mb-3">
+            <label for="" class="form-label">Pilihan:</label>
+            <select name="jenis">
+                <option value="Kering">Kering</option>
+                <option value="Basah">Basah</option>
+            </select>
+        </div>
+        <div class="ms-3 mb-3">
+            <label for="">Nama:</label>
+            <input type="text" name="nama">
+        </div>
+        <div class="ms-3 mb-3">
+            <label for="">Harga:</label>
+            <input type="text" name="harga">
+        </div>
+        <button type="submit" class="btn btn-primary ms-3">Submit</button>
+    </form>
+</section>
+
+<section>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Makanan</th>
+            <th>Jenis</th>
+            <th>Harga</th>
+            <th>Aksi</th>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.nama}}</td>
+                <td>{{i.jenis}}</td>
+                <td>{{i.harga}}</td>
+                <td>
+                    <a href="">Detail</a>
+                    <a href="update/{{i.id}}">Edit</a>
+                    <a href="hapus/{{i.id}}">Hapus</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
