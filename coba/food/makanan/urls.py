@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index),
     path('hapus/<id>', views.hapusMakanan),
     path('update/<id>', views.updateMakanan),
+    path('detail/<id>', views.lihatMakanan),
 ]

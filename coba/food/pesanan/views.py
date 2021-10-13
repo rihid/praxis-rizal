@@ -6,8 +6,11 @@ from . import models
 
 
 def index(request):
-    pesanans = models.pesanan.objects.all()
+    pesanans = makanan_models.makanan.objects.all()
     total = 0
-    for o in pesanans:
-        total += o.total()
-    return render(request, 'pesanan/index.html')
+    # for o in pesanans:
+    #     total += o.total()
+    return render(request, 'pesanan/index.html', {
+        'data': pesanans,
+        'total': total,
+    })

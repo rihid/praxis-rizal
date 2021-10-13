@@ -32,6 +32,14 @@ def updateMakanan(request, id):
     })
 
 
+def lihatMakanan(request, id):
+    data = models.makanan.objects.filter(pk=id).first()
+    print(data)
+    return render(request, 'makanan/detail.html', {
+        'data_detail': data
+    })
+
+
 def hapusMakanan(request, id):
     models.makanan.objects.filter(pk=id).delete()
     return redirect('/makanan')
