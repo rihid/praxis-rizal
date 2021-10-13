@@ -5,11 +5,11 @@ from . import models
 
 def index(request):
     if request.POST:
-        inputJenis = request.POST['jenis'],
-        inputNama = request.POST['nama'],
-        inputHarga = request.POST['harga']
+        jenis = request.POST['jenis'],
+        nama = request.POST['nama'],
+        harga = request.POST['harga']
         models.makanan.objects.create(
-            jenis=inputJenis, nama=inputNama, harga=inputHarga)
+            jenis=jenis, nama=nama, harga=harga)
     data = models.makanan.objects.all()
     return render(request, 'makanan/index.html', {
         'data': data
@@ -19,9 +19,9 @@ def index(request):
 def updateMakanan(request, id):
     if request.POST:
         models.makanan.objects.filter(pk=id).update(
-            inputJenis=request.POST['jenis'],
-            inputNama=request.POST['nama'],
-            inputHarga=request.POST['harga']
+            jenis=request.POST['jenis'],
+            nama=request.POST['nama'],
+            harga=request.POST['harga']
         )
         return redirect('/makanan')
 
