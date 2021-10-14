@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <form action="" class="mt-3" method="post">
+        {% csrf_token %}
+        <div class="ms-3 mb-3">
+            <label for="" class="form-label">Pilihan:</label>
+            <select name="jenis" id="" class="text-muted">
+                <option value="{{detail_edit.jenis}}">Panas</option>
+                <option value="{{detail_edit.jenis}}">Biasa</option>
+                <option value="{{detail_edit.jenis}}">Dingin</option>
+            </select>
+        </div>
+        <div class="ms-3 mb-3">
+            <label for="">Nama:</label>
+            <input type="text" name="nama" value="{{detail_edit.nama}}" class="text-muted">
+        </div>
+        <div class="ms-3 mb-3">
+            <label for="">Harga:</label>
+            <input type="text" name="harga" value="{{detail_edit.harga}}" class="text-muted">
+        </div>
+        <button type="submit" class="btn btn-success ms-3">Simpan</button>
+    </form>
+</section>
+
+{% endblock %}

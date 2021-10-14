@@ -7,20 +7,20 @@
         {% csrf_token %}
         <div class="ms-3 mb-3">
             <label for="" class="form-label">Pilihan:</label>
-            <select name="jenis" id="">
-                <option value="Kering">Kering</option>
-                <option value="Basah">Basah</option>
+            <select name="jenis" class="text-muted">
+                <option value="{{detail_edit.jenis}}">Kering</option>
+                <option value="{{detail_edit.jenis}}">Basah</option>
             </select>
         </div>
         <div class="ms-3 mb-3">
             <label for="">Nama:</label>
-            <input type="text" name="nama" id="">
+            <input type="text" name="nama" class="text-muted" value="{{detail_edit.nama}}">
         </div>
         <div class="ms-3 mb-3">
             <label for="">Harga:</label>
-            <input type="text" name="harga" id="">
+            <input type="text" name="harga" class="text-muted" value="{{detail_edit.harga}}">
         </div>
-        <button type="submit" class="btn btn-primary ms-3">Submit</button>
+        <button type="submit" class="btn btn-success ms-3">Simpan</button>
     </form>
 </section>
 

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 from makanan import models as makanan_models
 from . import models
 
@@ -12,5 +11,5 @@ def index(request):
     #     total += o.total()
     return render(request, 'pesanan/index.html', {
         'data': pesanans,
-        'total': total,
+        # 'total': total,
     })

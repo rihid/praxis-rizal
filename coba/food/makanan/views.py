@@ -5,8 +5,8 @@ from . import models
 
 def index(request):
     if request.POST:
-        jenis = request.POST['jenis'],
-        nama = request.POST['nama'],
+        jenis = request.POST['jenis']
+        nama = request.POST['nama']
         harga = request.POST['harga']
         models.makanan.objects.create(
             jenis=jenis, nama=nama, harga=harga)
