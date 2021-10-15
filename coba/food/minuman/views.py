@@ -16,7 +16,7 @@ def index(request):
     })
 
 
-def updateMakanan(request, id):
+def updateMinuman(request, id):
     if request.POST:
         models.minuman.objects.filter(pk=id).update(
             jenis=request.POST['jenis'],
@@ -28,6 +28,14 @@ def updateMakanan(request, id):
     print(hasil)
     return render(request, 'minuman/edit.html', {
         'detail_edit': hasil
+    })
+
+
+def lihatMinuman(request, id):
+    data = models.minuman.objects.filter(pk=id).first()
+    print(data)
+    return render(request, 'makanan/detail.html', {
+        'data_detail': data
     })
 
 

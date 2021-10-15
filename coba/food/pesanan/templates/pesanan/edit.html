@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="form">
+    <form action="" class="mt-3 mx-lg-5" method="post">
+        {% csrf_token %}
+        <div class="ms-3 mb-3">
+            <label>Makanan</label>
+            <select class="form-select" name="makanan">
+                <option selected>Pilih</option>
+                {% for i in dataMakanan %}
+                <option value="{{i.id}}">{{i.nama}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="ms-3 mb-3">
+            <label>Jumlah</label>
+            <input type="text" name="qty_makanan" class="form-control" value="{{data.qty_makanan}}">
+        </div>
+        <div class="ms-3 mb-3">
+            <label>Minuman</label>
+            <select class="form-select" name="minuman">
+                <option selected>Pilih</option>
+                {% for i in dataMinuman %}
+                <option value="{{i.id}}">{{i.nama}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="ms-3 mb-3">
+            <label>Jumlah</label>
+            <input type="text" name="qty_minuman" class="form-control" value="{{data.qty_minuman}}"><br>
+        </div>
+        <div class="ms-3 mb-3 ms-3 mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-warning">Simpan</button>
+        </div>
+
+    </form>
+</section>
+
+{% endblock %}

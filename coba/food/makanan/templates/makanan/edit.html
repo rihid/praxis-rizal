@@ -3,24 +3,27 @@
 {% block content %}
 
 <section>
-    <form action="" class="mt-3" method="post">
+    <form action="" class="mt-3 mx-lg-5" method="post">
         {% csrf_token %}
         <div class="ms-3 mb-3">
             <label for="" class="form-label">Pilihan:</label>
-            <select name="jenis" class="text-muted">
+            <select name="jenis" class="text-muted form-select">
                 <option value="{{detail_edit.jenis}}">Kering</option>
                 <option value="{{detail_edit.jenis}}">Basah</option>
             </select>
         </div>
         <div class="ms-3 mb-3">
             <label for="">Nama:</label>
-            <input type="text" name="nama" class="text-muted" value="{{detail_edit.nama}}">
+            <input type="text" name="nama" class="text-muted form-control" value="{{detail_edit.nama}}">
         </div>
         <div class="ms-3 mb-3">
             <label for="">Harga:</label>
-            <input type="text" name="harga" class="text-muted" value="{{detail_edit.harga}}">
+            <input type="text" name="harga" class="text-muted form-control" value="{{detail_edit.harga}}">
         </div>
-        <button type="submit" class="btn btn-success ms-3">Simpan</button>
+        <div class="ms-3 mb-3 ms-3 mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-warning">Simpan</button>
+        </div>
+        
     </form>
 </section>
 
